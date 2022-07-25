@@ -10,34 +10,35 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class _EmployeeServiceImpl implements EmployeeService {
+//public class EmployeeServiceImplOld implements EmployeeService {
+public class EmployeeServiceImplOld {
 
     private EmployeeDAO employeeDAO;
 
     @Autowired
-    public _EmployeeServiceImpl(@Qualifier("employeeDAOJpaImpl") EmployeeDAO theEmployeeDAO) {
+    public EmployeeServiceImplOld(@Qualifier("employeeDAOJpaImpl") EmployeeDAO theEmployeeDAO) {
         employeeDAO = theEmployeeDAO;
     }
 
-    @Override
+//    @Override
     @Transactional
     public List<Employee> findAll() {
         return employeeDAO.findAll();
     }
 
-    @Override
+//    @Override
     @Transactional
     public Employee findById(int theId) {
         return employeeDAO.findById(theId);
     }
 
-    @Override
+//    @Override
     @Transactional
     public void save(Employee theEmployee) {
         employeeDAO.save(theEmployee);
     }
 
-    @Override
+//    @Override
     @Transactional
     public void deleteById(int theId) {
         employeeDAO.deleteById(theId);
